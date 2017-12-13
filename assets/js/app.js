@@ -6,12 +6,6 @@ $(document).ready(function() {
     $("#loader").fadeOut();
   },6000);
   /**
-  * Makes the Materialize Select to appears when the loader dissapears
-  */
-  setTimeout(function(){
-    $("select").material_select();
-  },0);
-  /**
   * Initializes the modal
   */
   $("#modal").modal();
@@ -39,7 +33,9 @@ $(document).ready(function() {
     $(".container-img-p").mouseout(function() {
       $(":nth-child(1)", this).css({"opacity": "0"});
     });
-
+    /**
+    * Determining the content of the modal
+    */
     $(".container-img-p").click(function() {
       var place = $(this).children("img").attr("alt");
       for (var i = 0; i < restaurants.length; i++) {
@@ -59,6 +55,13 @@ $(document).ready(function() {
         }
       }
       $("#modal").modal("open");
+      /**
+      * If the user clicks on the modal overlay, the search resets itself
+      */
+      $(".modal-overlay").click(function() {
+        $("#restaurants-container").children().remove();
+        $("select").val(null);
+      })
     });
   });
 });

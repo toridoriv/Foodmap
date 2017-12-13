@@ -13,6 +13,7 @@ html {
   -webkit-animation: colorchange 3s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
+  display: none;
 }
 
 h1 {
