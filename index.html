@@ -8,9 +8,49 @@
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-  <div id="loader" class="valign-wrapper center-align">
+  <!-- This loader will apear for 6 seconds while the side is loading -->
+  <div id="loader" class="valign-wrapper center-align yellow-text text-darken-4">
     <h1>Foodmap</h1>
   </div>
+  <div id="main-container" class="container yellow-text text-darken-4 center-align">
+    <div class="row">
+      <div class="col s12">
+        <h1>Foodmap</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12">
+        <div id="map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d13312.962020540814!2d-70.62762785266226!3d-33.469088635159366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1srestaurant!5e0!3m2!1ses-419!2scl!4v1513135458283" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12">
+        <h2>Comida cerca de ti</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12">
+        <select id="filter" class="browser-default">
+          <option value="" disabled selected>Filtrar restaurantes</option>
+          <option value="asian">Comida asiática</option>
+          <option value="bakery">Pasteleria</option> 
+          <option value="japanese">Comida Japonesa</option> 
+          <option value="pizza">Pizza</option>
+          <option value="mediterranean">Comida Mediterranéa</option>
+          <option value="vegan">Comida Vegana</option>
+          <option value="vegetarian">Comida Vegetariana</option>
+          <option value="coffee">Cafetería</option>
+          <option value="fastfood">Comida Rápida</option>
+        </select>
+      </div>
+    </div>
+    <div id="restaurants-container" class="row">
+      
+    </div>
+  </div>
+  <script src="assets/js/data.js"></script>
   <script src="assets/js/jquery-3.2.1.js"></script>
   <script src="assets/js/materialize.min.js"></script>
   <script src="assets/js/app.js"></script>
