@@ -96,3 +96,15 @@ h2 {
   from {background-color: #2b2b2b;}
   to {background-color: white;}
 }
+
+@media (max-width: 400px) {
+  #modal {
+    width: 90%;
+  }
+}
+
+@media (max-width: 320px) {
+  #modal {
+    width: 100%;
+  }
+}
