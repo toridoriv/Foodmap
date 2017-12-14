@@ -1,4 +1,22 @@
+var addFilters = (function(element) {
+  var filtersArr = [];
+  for (var i = 0; i < restaurants.length; i++) {
+    for (var n = 0; n < restaurants[i].filters.length; n++) {
+      filtersArr.push(restaurants[i].filters[n]);
+    }
+  }
+  var filtersFinal = [...new Set(filtersArr)];
+  for (var a = 0; a < filtersFinal.length; a++) {
+    element.append("<option value='"+filtersFinal[a]+"'>"+filtersFinal[a]+"");
+  };
+  return filtersFinal;
+});
+
 $(document).ready(function() {
+  /**
+  * Function that creates new options according to the tags
+  */
+  addFilters($("#filter"));
   /**
   * Function that makes the loader fadeout after 6 seconds
   */
@@ -12,7 +30,7 @@ $(document).ready(function() {
   /**
   * Makes the images show when the value of a selection matches the filters of the restaurant
   */
-  $("select").change(function() {
+  $("#filter").change(function() {
     $("#restaurants-container").children().remove();
     var selection = $("select").val();
     for (var i = 0; i < restaurants.length; i++) {
