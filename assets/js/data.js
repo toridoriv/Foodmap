@@ -41,5 +41,19 @@ var restaurants = [
     filters: ["coffee", "bakery"],
     photo: "<img src='assets/img/central-friends.jpg' alt='Central Friends' class='mouseover'>",
     website: "http://www.centralfriends.cl/"
+  },
+  {
+    name: "Rock the Food",
+    address: ["Vicuña Mackenna 830, Ñuñoa, Santiago"],
+    filters: ["delivery", "sushi", "japanese", "asian", "vegetarian"],
+    photo: "<img src='assets/img/rockthefood.png' alt='Rock the Food' class='mouseover'>",
+    website: "http://www.rockthefood.cl/"
+  },
+  {
+    name: "Capitán Cook",
+    address: ["Milán 1221, San Miguel, Santiago", "Avenida Larraín 6759, La Reina, Santiago"],
+    filters: ["delivery", "mexican", "vegetarian", "vegan", "tacos"],
+    photo: "<img src='assets/img/capitan-cook.jpg' alt='Capitán Cook' class='mouseover'",
+    website: "www.capitancook.cl"
   }
 ]
