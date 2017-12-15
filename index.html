@@ -25,18 +25,25 @@
     </div>
     <div class="row">
       <div class="col s12">
-        <h2>Comida cerca de ti</h2>
+        <h2>Food Near You</h2>
       </div>
     </div>
     <div class="row">
       <div class="col s12">
         <select id="filter" class="browser-default">
-          <option value="" disabled selected>Filtrar restaurantes</option>
+          <option value="" disabled selected>Filter Restaurants</option>
         </select>
       </div>
     </div>
     <div id="restaurants-container" class="row">
       
+    </div>
+    <div id="add-restaurants">
+      <div class="row">
+        <div class="col s12">
+          <a id="add-restaurants-btn" class="waves-effect waves-light btn-large" href="#modal-add-restaurant">Add Restaurant</a>
+        </div>
+      </div>
     </div>
   </div>
   <div id="modal" class="modal">
@@ -44,6 +51,45 @@
       <h4 id="title-modal"></h4>
       <div id="modal-map"></div>
       <div id="modal-data"></div>
+    </div>
+  </div>
+  <div id="modal-add-restaurant" class="modal">
+    <div class="modal-content">
+      <h4>Add a Restaurant</h4>
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="restaurant-name" type="text" class="validate">
+              <label for="restaurant-name">Restaurant Name</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="restaurant-address" type="text" class="validate">
+              <label for="restaurant-address">Restaurant Address</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="restaurant-filters" type="text" class="validate">
+              <label for="restaurant-filters">Restaurant Filters</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="restaurant-photo" type="text" class="validate">
+              <label for="restaurant-photo">Restaurant Photo</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="restaurant-website" type="text" class="validate">
+              <label for="restaurant-website">Restaurant Website</label>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
   <script src="assets/js/data.js"></script>

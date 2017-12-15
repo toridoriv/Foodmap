@@ -5,7 +5,8 @@ var addFilters = (function(element) {
       filtersArr.push(restaurants[i].filters[n]);
     }
   }
-  var filtersFinal = [...new Set(filtersArr)];
+  var uniqueFilters = [...new Set(filtersArr)];
+  var filtersFinal = uniqueFilters.sort();
   for (var a = 0; a < filtersFinal.length; a++) {
     element.append("<option value='"+filtersFinal[a]+"'>"+filtersFinal[a]+"");
   };
@@ -85,17 +86,22 @@ $(document).ready(function() {
   */
   setTimeout(function(){
     $("#loader").fadeOut();
-  },6000);
+    $("#main-container").fadeIn();
+  },1000);
   setTimeout(function() {
     initMap();
-  },6000);
+  },1000);
   // setTimeout(function() {
   //   initialize();
   // },9000);
   /**
-  * Initializes the modal
+  * Initializes modals
   */
-  $("#modal").modal();
+  $(".modal").modal();
+  $("#add-restaurants-btn").click(function() {
+    $("#modal-add-restaurant").modal("open");
+  });
+  $("#restaurant-website, #restaurant-photo").val("http://");
   /**
   * Makes the images show when the value of a selection matches the filters of the restaurant
   */
@@ -120,6 +126,7 @@ $(document).ready(function() {
     $(".container-img-p").mouseout(function() {
       $(":nth-child(1)", this).css({"opacity": "0"});
     });
+
     /**
     * Determining the content of the modal
     */
@@ -148,7 +155,7 @@ $(document).ready(function() {
       $(".modal-overlay").click(function() {
         $("#restaurants-container").children().remove();
         $("#filter").val(null);
-      })
+      });
     });
   });
 });
