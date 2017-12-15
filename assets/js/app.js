@@ -101,7 +101,38 @@ $(document).ready(function() {
   $("#add-restaurants-btn").click(function() {
     $("#modal-add-restaurant").modal("open");
   });
-  $("#restaurant-website, #restaurant-photo").val("http://");
+
+  $("#restaurant-name, #restaurant-address, #restaurant-filters, #restaurant-photo, #restaurant-website").keyup(function() {
+    var valueName = $("#restaurant-name").val().length;
+    var valueAddress = $("#restaurant-address").val().length;
+    var valueFilters = $("#restaurant-filters").val().length;
+    var valuePhoto = $("#restaurant-photo").val().length;
+    var valueWebsite = $("#restaurant-website").val().length;
+
+    if (valueName > 0 && valueAddress > 0 && valueFilters > 0 && valuePhoto > 0 && valueWebsite > 0) {
+      $("#send-data-btn").removeClass("disabled");
+    } else {
+      $("#send-data-btn").addClass("disabled");
+    }
+  });
+
+  $("#send-data-btn").click(function() {
+    var takeName = $("#restaurant-name").val();
+    var takeAddress = [$("#restaurant-address").val()];
+    var takeFilters = $("#restaurant-filters").val().split(" ");
+    var takePhoto = $("#restaurant-photo").val();
+    var takeWebsite = $("#restaurant-website").val();
+    var checkUrl = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/;
+    var checkImg = /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|jpeg|png)/;
+    if(checkImg.test(takePhoto) && checkUrl.test(takeWebsite)) {
+      // "<img src='assets/img/vegan-bunker.jpg' alt='Vegan Bunker' class='mouseover'>",
+      restaurants.push({name: takeName, address: takeAddress, filters: takeFilters, photo: "<img src='"+takePhoto+"' alt="+takeName+" class='mouseover'>", website: takeWebsite});
+      $("#modal-add-restaurant").modal("close");
+    } else {
+      alert("Input not Valid");
+    }
+  });
+
   /**
   * Makes the images show when the value of a selection matches the filters of the restaurant
   */

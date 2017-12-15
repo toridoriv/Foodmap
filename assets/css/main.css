@@ -96,12 +96,20 @@ h2 {
   text-align: center;
 }
 
-.btn-large {
+.btn-large, .btn {
   background-color: #f57f17;
 }
 
-.btn-large:hover {
+.btn-large:hover, .btn:hover {
   background-color: #b85a08;
+}
+
+#modal-add-restaurant .modal-content {
+  justify-content: baseline;
+}
+
+#modal-add-restaurant p {
+  color: lightgray;
 }
 
 #modal-add-restaurant input:not([type]):focus:not([readonly]), 
