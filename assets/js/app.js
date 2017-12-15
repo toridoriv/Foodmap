@@ -126,7 +126,7 @@ $(document).ready(function() {
     var checkImg = /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|jpeg|png)/;
     if(checkImg.test(takePhoto) && checkUrl.test(takeWebsite)) {
       // "<img src='assets/img/vegan-bunker.jpg' alt='Vegan Bunker' class='mouseover'>",
-      restaurants.push({name: takeName, address: takeAddress, filters: takeFilters, photo: "<img src='"+takePhoto+"' alt="+takeName+" class='mouseover'>", website: takeWebsite});
+      restaurants.push({name: takeName, address: takeAddress, filters: takeFilters, photo: "<img src='"+takePhoto+"' alt='"+takeName+"'' class='mouseover'>", website: takeWebsite});
       $("#modal-add-restaurant").modal("close");
     } else {
       alert("Input not Valid");
